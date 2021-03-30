@@ -23,4 +23,15 @@ describe('positiveNumberRegex tests', () => {
     // Then
     expect(result).toBeFalsy()
   })
+
+  it("should return false for a planet that doesn't have a terrain property", () => {
+    // Given
+    const planet = { ...planetWithoutMountains, terrain: undefined }
+
+    // When
+    const result = hasMountains(planet)
+
+    // Then
+    expect(result).toBeFalsy()
+  })
 })

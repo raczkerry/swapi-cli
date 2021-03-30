@@ -23,4 +23,26 @@ describe('positiveNumberRegex tests', () => {
     // Then
     expect(result).toBeFalsy()
   })
+
+  it("should return false for a planet where the surface_water property === 'unknown'", () => {
+    // Given
+    const planet = { ...planetWithoutWater, surface_water: 'unknown' }
+
+    // When
+    const result = hasWaterSurface(planet)
+
+    // Then
+    expect(result).toBeFalsy()
+  })
+
+  it("should return false for a planet that doesn't have a surface_water property", () => {
+    // Given
+    const planet = { ...planetWithoutWater, surface_water: undefined }
+
+    // When
+    const result = hasWaterSurface(planet)
+
+    // Then
+    expect(result).toBeFalsy()
+  })
 })
