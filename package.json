@@ -9,6 +9,7 @@
   "private": true,
   "license": "UNLICENSED",
   "dependencies": {
-    "axios": "^0.21.1"
+    "axios": "^0.21.1",
+    "chalk": "^4.1.0"
   }
 }
