@@ -9,5 +9,6 @@
   "private": true,
   "license": "UNLICENSED",
   "dependencies": {
+    "axios": "^0.21.1"
   }
 }
