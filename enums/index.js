@@ -3,5 +3,10 @@ exports.MiscellaneousFilters = {
 }
 
 exports.Terrains = {
-  mountains: 'mountains'
+  glaciers: 'glaciers',
+  jungle: 'jungle',
+  mountains: 'mountains',
+  rainforests: 'rainforests',
+  swamp: 'swamp',
+  tundra: 'tundra'
 }
