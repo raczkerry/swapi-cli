@@ -40,9 +40,13 @@ const cli = async filmId => {
     terrains: answers.terrains,
     miscellaneous: answers.miscellaneous
   })
-  if (!totalDiameter) process.exit(1)
+  if (totalDiameter === undefined) process.exit(1)
 
-  console.log(`Total diameter: ${totalDiameter}`)
+  console.log(
+    totalDiameter === 0
+      ? 'There are no planets corresponding to all these criteria'
+      : `Total diameter: ${totalDiameter}`
+  )
 }
 
 cli(filmId)
