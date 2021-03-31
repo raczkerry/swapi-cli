@@ -18,14 +18,14 @@ const cli = async filmId => {
       type: 'checkbox',
       message: 'Select the terrains properties you want to apply',
       name: 'terrains',
-      choices: [new inquirer.Separator('Terrains properties'), ...Object.values(Terrains)],
+      choices: Object.values(Terrains),
       validate: () => true
     },
     {
       type: 'checkbox',
       message: 'Select the miscellaneous properties you want to apply',
       name: 'miscellaneous',
-      choices: [new inquirer.Separator('Terrains properties'), ...Object.values(MiscellaneousFilters)],
+      choices: Object.values(MiscellaneousFilters),
       validate: () => true
     }
   ])
