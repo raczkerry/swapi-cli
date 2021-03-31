@@ -1,3 +1,4 @@
+const { header } = require('./style')
 const { MiscellaneousFilters, Terrains } = require('./enums')
 const { sumOfDiameter } = require('./utils')
 const { positiveNumberRegex } = require('./utils/regexes')
@@ -19,7 +20,7 @@ const cli = async filmId => {
       message: 'Select the terrains properties you want to apply',
       name: 'terrains',
       choices: Object.values(Terrains),
-      validate: () => true
+      validaheaderte: () => true
     },
     {
       type: 'checkbox',
@@ -49,4 +50,5 @@ const cli = async filmId => {
   )
 }
 
+header()
 cli(filmId)
