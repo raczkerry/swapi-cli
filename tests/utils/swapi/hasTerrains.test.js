@@ -1,5 +1,6 @@
-const { hasMountains } = require('../../../utils/swapi')
+const { hasTerrains } = require('../../../utils/swapi')
 const { planetWithWaterAndMountains, planetWithoutMountains } = require('../../../mocks/swapi/planets')
+const { Terrains } = require('../../../enums')
 
 describe('positiveNumberRegex tests', () => {
   it('should return for a planet with mountains', () => {
@@ -7,7 +8,7 @@ describe('positiveNumberRegex tests', () => {
     const planet = planetWithWaterAndMountains
 
     // When
-    const result = hasMountains(planet)
+    const result = hasTerrains(planet, [Terrains.mountains])
 
     // Then
     expect(result).toBeTruthy()
@@ -18,7 +19,7 @@ describe('positiveNumberRegex tests', () => {
     const planet = planetWithoutMountains
 
     // When
-    const result = hasMountains(planet)
+    const result = hasTerrains(planet, [Terrains.mountains])
 
     // Then
     expect(result).toBeFalsy()
@@ -29,7 +30,18 @@ describe('positiveNumberRegex tests', () => {
     const planet = { ...planetWithoutMountains, terrain: undefined }
 
     // When
-    const result = hasMountains(planet)
+    const result = hasTerrains(planet)
+
+    // Then
+    expect(result).toBeFalsy()
+  })
+
+  it('should return false if we dont pass an array as second argument', () => {
+    // Given
+    const planet = planetWithWaterAndMountains
+
+    // When
+    const result = hasTerrains(planet, Terrains.mountains)
 
     // Then
     expect(result).toBeFalsy()

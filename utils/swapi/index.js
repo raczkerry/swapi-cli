@@ -1,4 +1,4 @@
-const { hasMountains } = require('./hasMountains')
+const { hasTerrains } = require('./hasTerrains')
 const { hasWaterSurface } = require('./hasWaterSurface')
 
-module.exports = { hasMountains, hasWaterSurface }
+module.exports = { hasTerrains, hasWaterSurface }
