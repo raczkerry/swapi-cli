@@ -30,6 +30,7 @@ const cli = async filmId => {
   }
 
   const totalDiameter = await sumOfDiameter(filmId, answers.filters)
+  if (!totalDiameter) process.exit(1)
 
   console.log(`Total diameter: ${totalDiameter}`)
 }

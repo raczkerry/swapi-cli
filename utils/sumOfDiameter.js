@@ -9,7 +9,7 @@ exports.sumOfDiameter = async (filmId, filters) => {
     console.log(chalk.red('An error occured while retreiving the film information'))
     console.log(chalk.red('Please ensure that the film id is correct'))
 
-    process.exit(1)
+    return null
   }
 
   const planets = await Promise.all(film.planets.map(planetUrl => API.Swapi.getPlanet(planetUrl)))
@@ -17,7 +17,7 @@ exports.sumOfDiameter = async (filmId, filters) => {
     console.log(chalk.red('An error occured while retreiving the planets information'))
     console.log(chalk.red('This could be a problem with the swapi API, try later'))
 
-    process.exit(1)
+    return null
   }
 
   const totalDiameter = planets.reduce(
