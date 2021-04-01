@@ -20,7 +20,7 @@ const cli = async filmId => {
       message: 'Select the terrains properties you want to apply',
       name: 'terrains',
       choices: Object.values(Terrains),
-      validaheaderte: () => true
+      validate: () => true
     },
     {
       type: 'checkbox',
