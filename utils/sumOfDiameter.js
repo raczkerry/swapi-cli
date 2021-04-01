@@ -10,7 +10,7 @@ exports.sumOfDiameter = async (filmId, filters) => {
   const film = await API.Swapi.getFilm(filmId)
   if (!film) {
     console.log(chalk.red('An error occured while retreiving the film information'))
-    console.log(chalk.red('Please ensure that the film id is correct'))
+    console.log(chalk.red('Please ensure that the film id is correct and that you internet connection is working'))
 
     return
   }
